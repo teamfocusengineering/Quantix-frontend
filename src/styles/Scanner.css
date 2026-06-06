@@ -1,0 +1,660 @@
+/* Existing styles are preserved; only add new classes needed for live weight input feedback. */
+
+.quantix-scanner__title,
+.quantix-scanner__section-title,
+.quantix-scanner__product-title {
+  caret-color: transparent;
+}
+
+.quantix-scanner__weight-input-wrapper {
+  position: relative;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.quantix-scanner__weight-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  padding: 12px;
+  font-size: 14px;
+  outline: none; /* prevent focus ring/dark outline */
+}
+
+.quantix-scanner__weight-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.quantix-scanner__weight-input-wrapper--matched {
+  border: 2px solid #22c55e; /* green */
+}
+
+.quantix-scanner__weight-input-wrapper--excess {
+  border: 2px solid #facc15; /* yellow */
+}
+
+.quantix-scanner__weight-input-wrapper--short {
+  border: 2px solid #ef4444; /* red */
+}
+
+.quantix-scanner__weight-input-adornment {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: #000000;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+
+.quantix-scanner__card--error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #cf1322;
+}
+
+.quantix-scanner__card--success {
+  background: #f6ffed;
+  border: 2px solid #52c41a;
+  text-align: center;
+}
+
+.quantix-scanner__card--fail {
+  background: #fff2f0;
+  border: 2px solid #ff4d4f;
+  text-align: center;
+}
+
+.quantix-scanner__qr-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.quantix-scanner__section-title {
+  margin-bottom: 12px;
+}
+
+.quantix-scanner__form {
+  display: flex;
+  gap: 8px;
+}
+
+.quantix-scanner__input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.quantix-scanner__input--full {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.quantix-scanner__input--readonly {
+  background: #f5f5f5;
+}
+
+.quantix-scanner__button {
+  padding: 12px 24px;
+  background: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.quantix-scanner__button--small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.quantix-scanner__button--small-gray {
+  padding: 6px 12px;
+  font-size: 13px;
+  background: #f0f0f0;
+  color: #333;
+}
+
+.quantix-scanner__button--reset {
+  margin-left: 12px;
+  padding: 6px 12px;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.quantix-scanner__button--validate {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.quantix-scanner__button--validate:disabled {
+  background: #d9d9d9;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.quantix-scanner__button--validate:not(:disabled) {
+  background: #1890ff;
+  color: #fff;
+}
+
+.quantix-scanner__product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quantix-scanner__product-title {
+  margin: 0;
+}
+
+.quantix-scanner__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.quantix-scanner__table th,
+.quantix-scanner__table td {
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  text-align: left;
+}
+
+.quantix-scanner__table thead tr {
+  background: #fafafa;
+}
+
+.quantix-scanner__table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.quantix-scanner__part-no {
+  font-weight: bold;
+}
+
+.quantix-scanner__weight-value {
+  color: #1890ff;
+  font-weight: bold;
+}
+
+.quantix-scanner__weight-placeholder {
+  color: #999;
+  font-weight: bold;
+}
+
+.quantix-scanner__final-status {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.quantix-scanner__final-status--accepted {
+  background: #f6ffed;
+  color: #389e0d;
+  border: 1px solid #b7eb8f;
+}
+
+.quantix-scanner__final-status--rejected {
+  background: #fff1f0;
+  color: #cf1322;
+  border: 1px solid #ffccc7;
+}
+
+.quantix-scanner__mode-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.quantix-scanner__reference-weight {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid #b3d8ff;
+  border-radius: 6px;
+  background: #f0f7ff;
+  color: #333;
+  font-size: 14px;
+}
+
+.quantix-scanner__reference-weight strong {
+  color: #1890ff;
+  white-space: nowrap;
+}
+
+.quantix-scanner__mode-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  cursor: pointer;
+  background: #fff;
+  color: #333;
+  font-weight: 500;
+}
+
+.quantix-scanner__mode-btn--active {
+  background: #1890ff;
+  color: #fff;
+  border-color: #1890ff;
+}
+
+.quantix-scanner__input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.quantix-scanner__input-row--wrap {
+  flex-wrap: wrap;
+}
+
+.quantix-scanner__connect-btn {
+  padding: 12px 16px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.quantix-scanner__connect-btn--bt {
+  background: #722ed1;
+}
+
+.quantix-scanner__connect-btn--bt-connected {
+  background: #52c41a;
+}
+
+.quantix-scanner__connect-btn--wifi {
+  background: #13c2c2;
+}
+
+.quantix-scanner__connect-btn--wifi-connected {
+  background: #52c41a;
+}
+
+.quantix-scanner__validation-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.quantix-scanner__validation-status {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.quantix-scanner__validation-status--match {
+  color: #52c41a;
+}
+
+.quantix-scanner__validation-status--mismatch {
+  color: #ff4d4f;
+}
+
+.quantix-scanner__validation-detail {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.quantix-scanner__card--summary {
+  background: #f0f7ff;
+  border: 1px solid #b3d8ff;
+}
+
+.quantix-scanner__summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.quantix-scanner__summary-table tbody tr {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.quantix-scanner__summary-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.quantix-scanner__summary-table td {
+  padding: 12px 8px;
+}
+
+.quantix-scanner__summary-table td:first-child {
+  color: #666;
+  font-weight: 500;
+  width: 60%;
+}
+
+.quantix-scanner__summary-value {
+  color: #1890ff;
+  font-weight: 700;
+  text-align: right;
+}
+
+.quantix-scanner__card--logs {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+}
+
+.quantix-scanner__vendor-review {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quantix-scanner__vendor-part {
+  margin-top: 4px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quantix-scanner__vendor-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.quantix-scanner__vendor-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.quantix-scanner__vendor-item--selected {
+  border-color: #1890ff;
+  background: #f0f7ff;
+}
+
+.quantix-scanner__vendor-radio {
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+
+.quantix-scanner__vendor-name {
+  color: #222;
+  font-weight: 700;
+}
+
+.quantix-scanner__vendor-meta,
+.quantix-scanner__vendor-weight,
+.quantix-scanner__vendor-stats {
+  color: #666;
+  font-size: 13px;
+}
+
+.quantix-scanner__vendor-weight {
+  margin-top: 4px;
+  color: #1890ff;
+  font-weight: 700;
+}
+
+.quantix-scanner__vendor-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.quantix-scanner__vendor-empty,
+.quantix-scanner__vendor-error {
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.quantix-scanner__vendor-empty {
+  background: #fafafa;
+  color: #666;
+  border: 1px solid #f0f0f0;
+}
+
+.quantix-scanner__vendor-error {
+  background: #fff2f0;
+  color: #cf1322;
+  border: 1px solid #ffccc7;
+}
+
+.quantix-scanner__logs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quantix-scanner__log-entry {
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.quantix-scanner__log-entry--match {
+  background: #f6ffed;
+  border-left-color: #52c41a;
+}
+
+.quantix-scanner__log-entry--mismatch {
+  background: #fff2f0;
+  border-left-color: #ff4d4f;
+}
+
+.quantix-scanner__log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quantix-scanner__log-part {
+  font-weight: 700;
+  color: #333;
+}
+
+.quantix-scanner__log-status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.quantix-scanner__log-status--match {
+  background: #52c41a;
+  color: #fff;
+}
+
+.quantix-scanner__log-status--mismatch {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+.quantix-scanner__log-details {
+  font-size: 13px;
+  color: #666;
+}
+
+.quantix-scanner__log-detail {
+  margin-bottom: 4px;
+}
+
+.quantix-scanner__log-detail span {
+  font-weight: 600;
+  color: #333;
+}
+
+.quantix-scanner__logs-table {
+  margin-top: 16px;
+}
+
+.quantix-scanner__log-row--match td {
+  background: #f6ffed;
+}
+
+.quantix-scanner__log-row--mismatch td {
+  background: #fff2f0;
+}
+
+.quantix-scanner__status-cell {
+  font-weight: 700;
+  padding: 12px;
+}
+
+.quantix-scanner__status--match {
+  color: #52c41a;
+}
+
+.quantix-scanner__status--mismatch {
+  color: #ff4d4f;
+}
+
+@media (max-width: 992px) {
+  .quantix-scanner__scan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .quantix-scanner__input-row {
+    flex-direction: column;
+  }
+
+  .quantix-scanner__mode-buttons {
+    flex-wrap: wrap;
+  }
+
+  .quantix-scanner__vendor-item {
+    flex-direction: column;
+  }
+
+  .quantix-scanner__vendor-stats {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Header action container */
+.quantix-scanner__header-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Shared small button style */
+.quantix-scanner__button--small-gray{
+  border: none;
+  outline: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.quantix-scanner__button--small-gray:hover{
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.quantix-scanner__button--small-gray:active{
+  transform: scale(0.98);
+}
+
+/* Edit button special style */
+.quantix-scanner__button--edit{
+  border: none;
+  outline: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 8px 20px rgba(37,99,235,0.25);
+}
+
+.quantix-scanner__button--edit:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 24px rgba(37,99,235,0.35);
+}
+
+.quantix-scanner__button--edit:active{
+  transform: scale(0.98);
+}
+
+/* Save button */
+.quantix-scanner__button--validate{
+  border: none;
+  outline: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    #16a34a,
+    #15803d
+  );
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 8px 20px rgba(22,163,74,0.25);
+}
+
+.quantix-scanner__button--validate:hover{
+  transform: translateY(-2px);
+}
+
+.quantix-scanner__button--validate:active{
+  transform: scale(0.98);
+}
